@@ -25,6 +25,7 @@ exports.findByID = (req, res) => {
 exports.findAll = (req, res) => {
 	Product.findAll({
 		attributes: [['id', 'product_id'], 'name', 'price'],
+		limit : 12,
 		include: [{
 			model: ProductImage,
 			where: { fk_companyid: db.Sequelize.col('products.id') },
