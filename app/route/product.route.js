@@ -5,7 +5,9 @@ module.exports = function(app) {
     // Retrieve all Products
     app.get('/api/products/all', products.findAll);
 
-
-    // Retrieve all Products
+    // Retrieve by ID
     app.get('/api/products/:id', products.findByID);
+
+    // Retrieve per page
+    app.get('/api/products', products.findAllQuery);
 }
