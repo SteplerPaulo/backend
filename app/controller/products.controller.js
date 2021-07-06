@@ -8,7 +8,7 @@ exports.findByID = (req, res) => {
 		attributes: ['id', 'name', 'price'],
 		include: [{
 			model: ProductImage,
-			where: { fk_companyid: db.Sequelize.col('products.id') },
+			where: { product_id: db.Sequelize.col('products.id') },
 			attributes: ['id', 'img_file', 'caption']
 		}],
 		where: {
@@ -25,7 +25,7 @@ exports.findAll = (req, res) => {
 		attributes: ['id', 'name', 'price'],
 		include: [{
 			model: ProductImage,
-			where: { fk_companyid: db.Sequelize.col('products.id') },
+			where: { product_id: db.Sequelize.col('products.id') },
 			attributes: ['id', 'img_file', 'caption']
 		}]
 	}).then(products => {
@@ -61,7 +61,7 @@ exports.findAllQuery = (req, res) => {
 		order: [['id', 'ASC']],
 		include: [{
 			model: ProductImage,
-			where: { fk_companyid: db.Sequelize.col('products.id') },
+			where: { product_id: db.Sequelize.col('products.id') },
 			attributes: ['id', 'img_file', 'caption']
 		}]
 	}).then(data => {
