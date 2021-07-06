@@ -19,12 +19,13 @@ const db = require('./app/config/db.config.js');
 //  console.log('Drop and Resync with { force: true }');
 //});
 
-require('./app/route/product.route.js')(app);
-require('./app/route/category.route.js')(app);
-require('./app/route/banner.route.js')(app);
-require('./app/route/banner.route.js')(app);
-require('./app/route/manufacturer.route.js')(app);
-require('./app/route/user.route.js')(app);
+//require('./app/route/product.route.js')(app);
+//require('./app/route/category.route.js')(app);
+//require('./app/route/banner.route.js')(app);
+//require('./app/route/banner.route.js')(app);
+//require('./app/route/manufacturer.route.js')(app);
+//require('./app/route/user.route.js')(app);
+require('./app/route/api.route.js')(app);
  
 // Create a Server
 var server = app.listen(8081, function () {
