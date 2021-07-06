@@ -11,6 +11,9 @@ const sequelize = new Sequelize(env.DATABASE, env.DBUSERNAME, env.DBPASSWORD, {
     min: parseInt(env.POOL_MIN) || 0,
     acquire: parseInt(env.POOL_ACQUIRE) || 30000,
     idle: parseInt(env.POOL_IDLE) || 10000
+  },
+  define: {
+    timestamps: false
   }
 });
 const db = {};
@@ -26,8 +29,9 @@ db.manufacturers = require('../model/manufacturer.model.js')(sequelize, Sequeliz
 db.users = require('../model/user.model.js')(sequelize, Sequelize);
 
 
-// Here we can connect companies and products base on company'id
-db.products.hasMany(db.product_images, {foreignKey: 'product_id', sourceKey: 'id'});
-db.product_images.belongsTo(db.products, {foreignKey: 'product_id', targetKey: 'id'});
+//The Associations below have been created with all possible keys, those that are not needed can be removed
+db.products.hasMany(db.product_images, { foreignKey: 'product_id', sourceKey: 'id' });
+db.product_images.belongsTo(db.products, { foreignKey: 'product_id', targetKey: 'id' });
+
 
 module.exports = db;
