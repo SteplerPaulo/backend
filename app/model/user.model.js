@@ -5,16 +5,19 @@ module.exports = (sequelize, Sequelize) => {
 		defaultValue: Sequelize.UUIDV1,
 		primaryKey: true
 	  },
-	  name: {
+	  username: {
 		  type: Sequelize.STRING
 	  },
-	  img_file: {
+	  first_name: {
 		  type: Sequelize.STRING
 	  },
-	  caption: {
+	  middle_name: {
 		  type: Sequelize.STRING
 	  },
-	  is_active: {
+	  last_name: {
+		  type: Sequelize.STRING
+	  },
+	  is_admin: {
 		  type: Sequelize.STRING
 	  },
 	  created: {
