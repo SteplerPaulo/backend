@@ -4,4 +4,6 @@ module.exports = function (app) {
     // Retrieve per page
     app.get('/api/:model', api.findAllQuery);
 
+
+    app.post('/api/:model', api.postData);
 }
