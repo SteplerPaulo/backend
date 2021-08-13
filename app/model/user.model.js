@@ -17,7 +17,7 @@ module.exports = (sequelize, Sequelize) => {
 	  last_name: {
 		  type: Sequelize.STRING
 	  },
-	  is_admin: {
+	  role: {
 		  type: Sequelize.STRING
 	  },
 	  created: {
