@@ -32,6 +32,7 @@ db.users = require('../model/user.model.js')(sequelize, Sequelize);
 //The Associations below have been created with all possible keys, those that are not needed can be removed
 db.products.hasMany(db.product_images, { foreignKey: 'product_id', sourceKey: 'id' });
 db.product_images.belongsTo(db.products, { foreignKey: 'product_id', targetKey: 'id' });
+db.products.belongsTo(db.categories, { foreignKey: 'category_id', targetKey: 'id' });
 
 
 module.exports = db;
